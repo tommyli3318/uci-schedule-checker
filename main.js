@@ -34,9 +34,12 @@ function search() {
         console.log(code, title, `num_req:${num_req}`, `curr:${num_curr_enrolled}`, `max:${capacity}`, status);
 
         if (num_curr_enrolled < capacity || status != "FULL") {
-            notify('34100 OPEN SPACE!!!!!!!!!!!!!!!!!!!!!!!!!!');
+            notify(`${opts.sectionCodes} OPEN SPACE!!!!!!!!!!!!!!!!!!!!!!!!!!`);
             console.log('SPACE OPENED!!!!!!!!!!!!!!!!!!!!!!!!!');
         }
+
+    }).catch((err) => {
+        console.log(`ERROR: ${err}`);
     });
 }
 
